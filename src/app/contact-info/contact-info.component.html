@@ -1,0 +1,15 @@
+<h3 *ngIf="contact === null; else contactInfo">Contact info</h3>
+<ng-template #contactInfo>
+<h3>
+  {{contact.name}}
+</h3>
+<p>
+  {{contact.email}}
+</p>
+<p>
+  {{contact.phone}}
+</p>
+<p>
+  {{contact.address}}
+</p>
+</ng-template>

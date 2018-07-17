@@ -6,6 +6,7 @@ import { ContactRowComponent } from './contact-row/contact-row.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactInfoComponent } from './contact-info/contact-info.component';
 import {FormsModule} from '@angular/forms';
+import {ContactService} from './contact.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import {FormsModule} from '@angular/forms';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component,} from '@angular/core';
+import {ContactService} from '../contact.service';
 
 @Component({
   selector: 'app-contact-info',
@@ -6,15 +7,9 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./contact-info.component.css']
 })
 export class ContactInfoComponent {
-  // @Input('contactInfo')contact:Contact = null;
-  contact:Contact = null;
-  setContact(contact:Contact){
-    this.contact = contact;
+
+  constructor(public contactService: ContactService){
+
   }
 }
-type Contact = {
-  name:string,
-  email:string,
-  phone:string,
-  address: string
-}
+

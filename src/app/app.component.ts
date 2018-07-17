@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {ContactService} from './contact.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,20 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  contacts: Contact[] = [];
-  currentContact: Contact = null;
 
-  addContact(contact: Contact) {
-    this.contacts.push(contact);
-  }
+  constructor(public contactService:ContactService){}
 
-  setCurrentContact(i: number) {
-    this.currentContact = this.contacts[i];
-  }
 }
-type Contact = {
-  name:string,
-  email:string,
-  phone:string,
-  address: string
-}
+

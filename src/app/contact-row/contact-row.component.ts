@@ -1,4 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ContactModel} from '../contact.model';
+import {ContactService} from '../contact.service';
 
 @Component({
   selector: 'app-contact-row',
@@ -6,16 +8,14 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./contact-row.component.css']
 })
 export class ContactRowComponent {
-  @Input('currentContact') contact: Contact;
-  @Output('rowClickEvent') emitter: EventEmitter<Contact> = new EventEmitter<Contact>();
+  @Input('currentContact') contact: ContactModel;
+
+  constructor(private contactService:ContactService){
+
+  }
 
   onRowClick() {
-    this.emitter.emit(this.contact);
+    this.contactService.setCurrentContact(this.contact);
   }
 }
-type Contact = {
-  name:string,
-  email:string,
-  phone:string,
-  address: string
-}
+

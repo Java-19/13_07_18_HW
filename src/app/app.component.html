@@ -1,20 +1,15 @@
 <div class="container">
-  <app-contact-form (addContactEvent)="addContact($event)"></app-contact-form>
+  <app-contact-form></app-contact-form>
 </div>
 <hr>
 <div class="container">
   <div class="row">
     <div class="col">
-      <!--<app-contact-row (click)="setCurrentContact(i)" *ngFor="let contact of contacts; let i = index" [currentContact]="contact">-->
-        <!---->
-      <!--</app-contact-row>-->
-      <app-contact-row (rowClickEvent)="contactInfo.setContact($event)" *ngFor="let contact of contacts; let i = index" [currentContact]="contact">
-
+      <app-contact-row *ngFor="let contact of contactService.contacts;" [currentContact]="contact">
       </app-contact-row>
     </div>
     <div class="col">
-      <!--<app-contact-info [contactInfo]="currentContact" ></app-contact-info>-->
-      <app-contact-info #contactInfo ></app-contact-info>
+      <app-contact-info></app-contact-info>
     </div>
   </div>
 </div>
